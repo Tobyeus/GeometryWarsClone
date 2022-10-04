@@ -1,0 +1,23 @@
+﻿  Game.cpp
+E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\xutility(238,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\memory(2022): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,int,int,sf::Color&,sf::Color&,int>(_Ty &,int &&,int &&,sf::Color &,sf::Color &,int &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=CShape
+          ]
+E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\memory(2741): message : see reference to function template instantiation 'std::_Ref_count_obj2<CShape>::_Ref_count_obj2<_Ty,_Ty,sf::Color&,sf::Color&,_Ty>(_Ty &&,_Ty &&,sf::Color &,sf::Color &,_Ty &&)' being compiled
+          with
+          [
+              _Ty=int
+          ]
+E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\memory(2742): message : see reference to function template instantiation 'std::_Ref_count_obj2<CShape>::_Ref_count_obj2<_Ty,_Ty,sf::Color&,sf::Color&,_Ty>(_Ty &&,_Ty &&,sf::Color &,sf::Color &,_Ty &&)' being compiled
+          with
+          [
+              _Ty=int
+          ]
+E:\Tobias\Projects\c++\simpleEngine-master\Game.cpp(24): message : see reference to function template instantiation 'std::shared_ptr<CShape> std::make_shared<CShape,int,int,sf::Color&,sf::Color&,int>(int &&,int &&,sf::Color &,sf::Color &,int &&)' being compiled
+  simpleEngine.vcxproj -> E:\Tobias\Projects\c++\simpleEngine-master\x64\Debug\simpleEngine.exe
