@@ -1,14 +1,14 @@
 #include "EntityManager.h"
 
 std::shared_ptr<Entity> EntityManager::addEntity(const std::string& tag) {
-	auto e = std::make_shared<Entity>(Entity(tag, m_totalEntities++));
-	m_toAdd.push_back(e);
+	auto e = std::shared_ptr<Entity>(new Entity(tag, m_totalEntities++));
+	m_EntitesToAdd.push_back(e);
 	return e;
 }
 
 void EntityManager::update() {
 	// Pushing new Elements
-	for (auto e: m_toAdd) {
+	for (auto e: m_EntitesToAdd) {
 		m_entities.push_back(e);
 		m_entityMap[e->getTag()].push_back(e);
 	}
@@ -43,7 +43,7 @@ void EntityManager::update() {
 		}
 	}
 
-	m_toAdd.clear();
+	m_EntitesToAdd.clear();
 }
 
 EntityVector& EntityManager::getEntities() { return m_entities; }

@@ -6,10 +6,13 @@
 
 class Game {
 	sf::RenderWindow m_window;
+	int m_wWidth = 1024;
+	int m_wLength = 768;
 	EntityManager m_entities;
 	std::shared_ptr<Entity> m_player;
 	bool m_pause = false;
 	bool m_running = true;
+	int m_currentFrame = 0;
 public:
 	void run();
 private:
@@ -24,4 +27,9 @@ private:
 
 	// Helper Functions
 	void spawnPlayer();
+	void spawnEnemy();
+	void spawnBullet();
+	// Functions, abstract later
+	int random(int min, int max);
+	float distanceTwoPoints(Vec2& v1, Vec2& v2);
 };

@@ -2,10 +2,12 @@
 
 #include "Vec2.h"
 #include "SFML/Graphics.hpp"
+#include "SFML/Window.hpp"
 
 // Components for the Entities are defined here
 // Components are basically pure data stored for the entities
 // They give functionality to the Entities i.e. shape, Transform, Collision
+// the functionality is handled in other helper or system functions
 
 
 // Shapes handles the drawn object
@@ -16,12 +18,14 @@ class CShape {
 public:
 	sf::CircleShape shape;
 
-	CShape(float radius, size_t points, const sf::Color& fill, sf::Color& outline, float thickness)
+	CShape(float radius, size_t points, const sf::Color& fill, sf::Color& outline, float thickness, Vec2 position)
 		: shape(radius, points) {
 		shape.setFillColor(fill);
 		shape.setOutlineColor(outline);
 		shape.setOutlineThickness(thickness);
 		shape.setOrigin(radius, radius);
+		shape.setPosition(position.x, position.y);
+		shape.setRotation(0.0f);
 	}
 };
 
@@ -29,15 +33,10 @@ public:
 class CTransform {
 public:
 	Vec2 position = { 0.0f, 0.0f };
-	Vec2 speed = { 0.0f, 0.0f};
+	Vec2 speed = { 0.0f, 0.0f };
 	float angle = 0.0f;
 
 	CTransform(Vec2& posIn, Vec2& speedIn, float angleIn) : position(posIn), speed(speedIn), angle(angleIn) {};
-
-	void calculateMovement() {
-		position.x += speed.x;
-		position.y += speed.y;
-	}
 };
 
 class CScore {
@@ -51,5 +50,24 @@ public:
 };
 
 class CInput {
+public:
+	bool movementUp = false;
+	bool movementDown = false;
+	bool movementRight = false;
+	bool movementLeft = false;
+
+	bool mouseLeft = false;
+	bool mouseRight = false;
+
+	void mouseInput() {
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+			// Gunfire
+		}
+
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
+			// No function yet
+		}
+
+	}
 
 };

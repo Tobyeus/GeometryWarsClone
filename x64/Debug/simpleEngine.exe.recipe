@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>E:\Tobias\Projects\c++\simpleEngine-master\x64\Debug\simpleEngine.exe</FullPath>
+      <FullPath>E:\Tobias\Projects\c++\simpleEngine\x64\Debug\simpleEngine.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
