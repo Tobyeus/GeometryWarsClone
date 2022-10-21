@@ -39,9 +39,16 @@ public:
 	CTransform(Vec2& posIn, Vec2& speedIn, float angleIn) : position(posIn), speed(speedIn), angle(angleIn) {};
 };
 
+class CLives {
+public:
+	int lives;
+
+	CLives(int cLives) : lives(cLives) {};
+};
+
 class CScore {
 public:
-	int score;
+	int score = 0;
 };
 
 class CCollision {

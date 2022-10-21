@@ -27,8 +27,9 @@ private:
 
 	// Helper Functions
 	void spawnPlayer();
+	void respawnPlayer();
 	void spawnEnemy();
-	void spawnBullet();
+	void spawnBullet(std::shared_ptr<Entity>& entity, Vec2 mousePos);
 	// Functions, abstract later
 	int random(int min, int max);
 	float distanceTwoPoints(Vec2& v1, Vec2& v2);

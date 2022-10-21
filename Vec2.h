@@ -6,7 +6,8 @@ public:
 	float y = 0;
 
 	Vec2() = default;
-	Vec2(float xin, float yin) : x(xin), y(yin) {};
+	Vec2(float xin, float yin): x(xin), y(yin) {};
+	Vec2(int xin, int yin) : x(xin), y(yin) {};
 
 	void print();
 	float magnitude();

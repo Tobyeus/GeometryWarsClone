@@ -20,6 +20,7 @@ public:
 	std::shared_ptr<CCollision> cCollision;
 	std::shared_ptr<CInput> cInput;
 	std::shared_ptr<CScore> cScore;
+	std::shared_ptr<CLives> cLives;
 	//CLifespan* cLifespan;
 
 	size_t getId() { return m_id; };

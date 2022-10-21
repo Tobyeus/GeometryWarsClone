@@ -1,24 +1,24 @@
-﻿  Game.cpp
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(103,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(109,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(285,84): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=int
-          ]
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(285,48): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=int
-          ]
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(295,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(295,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(296,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(296,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\xutility(238,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+﻿  Entity.cpp
+E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  EntityManager.cpp
+E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Game.cpp
+E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Tobias\Projects\c++\simpleEngine\Game.cpp(24,15): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+E:\Tobias\Projects\c++\simpleEngine\Game.cpp(113,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Tobias\Projects\c++\simpleEngine\Game.cpp(119,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\xutility(224,72): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
               _Ty=int
+          ]
+E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\xutility(223): message : see reference to function template instantiation '_Ty *std::construct_at<_Ty,int,int,sf::Color&,sf::Color&,int,Vec2&,void>(_Ty *const ,int &&,int &&,sf::Color &,sf::Color &,int &&,Vec2 &) noexcept(<expr>)' being compiled
+          with
+          [
+              _Ty=CShape
           ]
 E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\memory(2022): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,int,int,sf::Color&,sf::Color&,int,Vec2&>(_Ty &,int &&,int &&,sf::Color &,sf::Color &,int &&,Vec2 &) noexcept(false)' being compiled
           with
@@ -36,4 +36,31 @@ E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\memo
               _Ty=int
           ]
 E:\Tobias\Projects\c++\simpleEngine\Game.cpp(25): message : see reference to function template instantiation 'std::shared_ptr<CShape> std::make_shared<CShape,int,int,sf::Color&,sf::Color&,int,Vec2&>(int &&,int &&,sf::Color &,sf::Color &,int &&,Vec2 &)' being compiled
+E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\xutility(238,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\xutility(225,85): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\xutility(231): message : see reference to function template instantiation '_Ty *std::construct_at<_Ty,int,int,sf::Color&,sf::Color&,int,Vec2&,void>(_Ty *const ,int &&,int &&,sf::Color &,sf::Color &,int &&,Vec2 &) noexcept(false)' being compiled
+          with
+          [
+              _Ty=CShape
+          ]
+E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\memory(2022): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,int,int,sf::Color&,sf::Color&,int,Vec2&>(_Ty &,int &&,int &&,sf::Color &,sf::Color &,int &&,Vec2 &) noexcept(false)' being compiled
+          with
+          [
+              _Ty=CShape
+          ]
+  Main.cpp
+E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Vec2.cpp
+E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   simpleEngine.vcxproj -> E:\Tobias\Projects\c++\simpleEngine\x64\Debug\simpleEngine.exe

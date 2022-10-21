@@ -8,7 +8,7 @@ typedef std::map<std::string, EntityVector> EntityMap;
 
 class EntityManager {
 	EntityVector m_entities;
-	EntityVector m_EntitesToAdd;
+	EntityVector m_entitesToAdd;
 	EntityMap m_entityMap;
 	size_t m_totalEntities = 0;
 private:
@@ -17,6 +17,7 @@ public:
 	EntityManager(){};
 	~EntityManager(){};
 	void update();
+	void removeDeadEntities(EntityVector& eVec);
 	std::shared_ptr<Entity> addEntity(const std::string& string);
 	EntityVector& getEntities();
 	EntityVector& getEntities(const std::string& tag);

@@ -25,7 +25,14 @@ void Game::spawnPlayer() {
 	m_player->cShape = std::make_shared<CShape>(20, 10, playerColor, outlineColor, 5, position);
 	m_player->cTransform = std::make_shared<CTransform>(position, speed, 0.0f);
 	m_player->cInput = std::make_shared<CInput>();
-	m_entities.update();
+	m_player->cScore = std::make_shared<CScore>();
+	m_player->cLives = std::make_shared<CLives>(3);
+}
+
+// TODO: Method is not finished yet
+void Game::respawnPlayer() {
+	m_player->cLives->lives--;
+	m_player->cShape->shape.setPosition(512.0f, 384.0f);
 }
 
 // Spawning enemies, similar to the above function
@@ -38,12 +45,17 @@ void Game::run() {
 	std::cout << "Game Loop starting" << std::endl;
 	// Initialization
 	init();
+	m_entities.update();
 
 	// Gameloop
 	while (m_running) {
 
 		// Systems
-		if (m_currentFrame % 80 == 0) {
+
+		// Spawning Enemies after 90 frames
+		// limit 30 fps -> 90 frames correspond to 3 seconds -> 1 enemy every 3 seconds
+		// thats just the math, I did not really test it
+		if (m_currentFrame % 90 == 0) {
 			sEnemySpawner();
 		}
 		// spawnEnemies
@@ -76,7 +88,6 @@ void Game::sMovement() {
 
 	// Player movement
 	// Player Input WASD
-
 	if (m_player->cInput->movementUp) {
 		// go up
 		m_player->cTransform->position.y -= m_player->cTransform->speed.y;
@@ -95,7 +106,6 @@ void Game::sMovement() {
 	}
 
 	// Player Boundaries
-
 	if (m_player->cTransform->position.x <= 0) {
 		m_player->cTransform->position.x = 0;
 	}
@@ -227,7 +237,7 @@ void Game::sUserInput(){
 			switch (event.key.code) {
 				case sf::Mouse::Button::Left:
 					std::cout << "Left Mouse Button pressed" << std::endl;
-					spawnBullet();
+					spawnBullet(m_player, Vec2(event.mouseButton.x, event.mouseButton.y));
 			}
 		}
 		if (event.type == sf::Event::MouseButtonReleased) {
@@ -248,17 +258,12 @@ void Game::sCollision() {
 			if (dist <= collisiondist) {
 				// Bullet hits enemy
 				if (e1->getTag() == "Bullet" && e2->getTag() == "Enemy") {
+					m_player->cScore->score += (int) e2->cShape->shape.getRadius();
 					e2->destroy();
-				}
-				if (e1->getTag() == "Enemy" && e2->getTag() == "Bullet") {
-					e1->destroy();
 				}
 				// Player hits enemy
 				if (e1->getTag() == "Player" && e2->getTag() == "Enemy") {
 					e1->destroy();
-				}
-				if (e1->getTag() == "Enemy" && e2->getTag() == "Player") {
-					e2->destroy();
 				}
 			}
 		}
@@ -277,17 +282,16 @@ void Game::sCollision() {
 }*/
 
 // Function to spawn a bullet at the position of the player
-// Next TODO: Since Origin of the coord system is not in the middle some transformation has to be done.
-void Game::spawnBullet() {
+void Game::spawnBullet(std::shared_ptr<Entity>& entity, Vec2 mousePos) {
 	auto bullet = m_entities.addEntity("Bullet");
 	sf::Color bulletFill(255, 255, 255);
-	Vec2 bulletPos = m_player->cTransform->position;
-	Vec2 mousePos(sf::Mouse::getPosition(m_window).x, sf::Mouse::getPosition(m_window).y);
+	Vec2 bulletPos = entity->cTransform->position;
 	Vec2 bulletSpeed = ((mousePos - bulletPos) / (mousePos - bulletPos).magnitude()) * 10;
-	bullet->cShape = std::make_shared<CShape>(CShape(5, 20, bulletFill, bulletFill, 0.0f, bulletPos));
 	bullet->cTransform = std::make_shared<CTransform>(CTransform(bulletPos, bulletSpeed, 0.0f));
+	bullet->cShape = std::make_shared<CShape>(CShape(5, 20, bulletFill, bulletFill, 0.0f, bulletPos));
 }
 
+// TODO: Optimize this
 void Game::spawnEnemy() {
 	auto enemy = m_entities.addEntity("Enemy");
 	sf::Color enemyColor(random(0,255), random(0, 255), random(0, 255));
