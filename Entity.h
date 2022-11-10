@@ -20,11 +20,13 @@ public:
 	std::shared_ptr<CCollision> cCollision;
 	std::shared_ptr<CInput> cInput;
 	std::shared_ptr<CScore> cScore;
-	std::shared_ptr<CLives> cLives;
+	std::shared_ptr <CSpawnProjectile> cProjectile;
+	//std::shared_ptr<CLives> cLives;
 	//CLifespan* cLifespan;
 
 	size_t getId() { return m_id; };
 	std::string getTag() const { return m_tag; };
 	bool getStatus() { return m_active; };
 	void destroy() { m_active = false; };
+	void setAlive() { m_active = true; };
 };

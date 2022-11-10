@@ -1,15 +1,7 @@
-﻿  Entity.cpp
+﻿  Scene_Play.cpp
 E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  EntityManager.cpp
-E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  Game.cpp
-E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(24,15): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(113,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(119,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Tobias\Projects\c++\simpleEngine\Scene_Play.cpp(39,15): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\xutility(224,72): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
@@ -35,7 +27,7 @@ E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\memo
           [
               _Ty=int
           ]
-E:\Tobias\Projects\c++\simpleEngine\Game.cpp(25): message : see reference to function template instantiation 'std::shared_ptr<CShape> std::make_shared<CShape,int,int,sf::Color&,sf::Color&,int,Vec2&>(int &&,int &&,sf::Color &,sf::Color &,int &&,Vec2 &)' being compiled
+E:\Tobias\Projects\c++\simpleEngine\Scene_Play.cpp(40): message : see reference to function template instantiation 'std::shared_ptr<CShape> std::make_shared<CShape,int,int,sf::Color&,sf::Color&,int,Vec2&>(int &&,int &&,sf::Color &,sf::Color &,int &&,Vec2 &)' being compiled
 E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\xutility(238,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
@@ -56,11 +48,4 @@ E:\Programme\Visual Studio Community\2022\VC\Tools\MSVC\14.33.31629\include\memo
           [
               _Ty=CShape
           ]
-  Main.cpp
-E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  Vec2.cpp
-E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\Tobias\Projects\c++\simpleEngine\Vec2.h(10,36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
   simpleEngine.vcxproj -> E:\Tobias\Projects\c++\simpleEngine\x64\Debug\simpleEngine.exe

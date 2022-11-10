@@ -39,13 +39,6 @@ public:
 	CTransform(Vec2& posIn, Vec2& speedIn, float angleIn) : position(posIn), speed(speedIn), angle(angleIn) {};
 };
 
-class CLives {
-public:
-	int lives;
-
-	CLives(int cLives) : lives(cLives) {};
-};
-
 class CScore {
 public:
 	int score = 0;
@@ -65,16 +58,10 @@ public:
 
 	bool mouseLeft = false;
 	bool mouseRight = false;
+};
 
-	void mouseInput() {
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-			// Gunfire
-		}
-
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
-			// No function yet
-		}
-
-	}
-
+class CSpawnProjectile {
+public:
+	bool shoot = false;
+	Vec2 mousePos;
 };
