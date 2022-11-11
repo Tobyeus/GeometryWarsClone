@@ -18,6 +18,31 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Action.h" />
+    <ClInclude Include="src\Components.h" />
+    <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="src\EntityManager.h" />
+    <ClInclude Include="src\GameEngine.h" />
+    <ClInclude Include="src\Scene.h" />
+    <ClInclude Include="src\Vec2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Action.cpp" />
+    <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="src\EntityManager.cpp" />
+    <ClCompile Include="src\GameEngine.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="src\Scene_Menu.cpp" />
+    <ClCompile Include="src\Scene_Play.cpp" />
+    <ClCompile Include="src\Vec2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="LICENSE" />
+    <None Include="README.md" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -70,6 +95,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -121,6 +154,15 @@
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)Libraries\SFML-2.5\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\open32.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-graphics-2.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-graphics-d-2.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-system-2.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-system-d-2.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-window-2.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-window-d-2.dll" "$(OutputPath)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -141,27 +183,16 @@
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)Libraries\SFML-2.5\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\open32.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-graphics-2.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-graphics-d-2.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-system-2.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-system-d-2.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-window-2.dll" "$(OutputPath)"
+xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-window-d-2.dll" "$(OutputPath)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Action.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="EntityManager.cpp" />
-    <ClCompile Include="GameEngine.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="Scene_Menu.cpp" />
-    <ClCompile Include="Scene_Play.cpp" />
-    <ClCompile Include="Vec2.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Action.h" />
-    <ClInclude Include="Components.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="EntityManager.h" />
-    <ClInclude Include="GameEngine.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="Vec2.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
