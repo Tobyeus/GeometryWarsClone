@@ -35,12 +35,4 @@
 
 bin/*
 bin-int/*
-<<<<<<< HEAD
 .vs/*
-=======
-<<<<<<< HEAD
-.vs/*
-=======
-.vs/*
->>>>>>> 9d94d9c (tidy up)
->>>>>>> dd7db4e (changes to the folder structure and dll management)
