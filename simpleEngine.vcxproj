@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
@@ -19,29 +11,157 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Action.h" />
-    <ClInclude Include="src\Components.h" />
-    <ClInclude Include="src\Entity.h" />
-    <ClInclude Include="src\EntityManager.h" />
-    <ClInclude Include="src\GameEngine.h" />
-    <ClInclude Include="src\Scene.h" />
-    <ClInclude Include="src\Vec2.h" />
+    <ClInclude Include="libraries\ImGui\imconfig-SFML.h" />
+    <ClInclude Include="libraries\ImGui\imconfig.h" />
+    <ClInclude Include="libraries\ImGui\imgui-SFML.h" />
+    <ClInclude Include="libraries\ImGui\imgui-SFML_export.h" />
+    <ClInclude Include="libraries\ImGui\imgui.h" />
+    <ClInclude Include="libraries\ImGui\imgui_internal.h" />
+    <ClInclude Include="libraries\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="libraries\ImGui\imstb_textedit.h" />
+    <ClInclude Include="libraries\ImGui\imstb_truetype.h" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\AlResource.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\Export.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\InputSoundFile.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\Listener.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\Music.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\OutputSoundFile.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\Sound.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\SoundBuffer.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\SoundBufferRecorder.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\SoundFileFactory.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\SoundFileReader.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\SoundFileWriter.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\SoundRecorder.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\SoundSource.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Audio\SoundStream.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Config.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\GpuPreference.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\BlendMode.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\CircleShape.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Color.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\ConvexShape.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Drawable.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Export.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Font.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Glsl.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Glyph.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Image.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\PrimitiveType.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Rect.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\RectangleShape.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\RenderStates.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\RenderTarget.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\RenderTexture.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\RenderWindow.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Shader.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Shape.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Sprite.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Text.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Texture.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Transform.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Transformable.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\Vertex.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\VertexArray.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\VertexBuffer.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Graphics\View.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Main.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\Export.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\Ftp.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\Http.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\IpAddress.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\Packet.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\Socket.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\SocketHandle.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\SocketSelector.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\TcpListener.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\TcpSocket.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Network\UdpSocket.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\OpenGL.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Clock.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Err.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Export.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\FileInputStream.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\InputStream.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Lock.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\MemoryInputStream.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Mutex.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\NativeActivity.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\NonCopyable.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Sleep.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\String.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Thread.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\ThreadLocal.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\ThreadLocalPtr.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Time.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Utf.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Vector2.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\System\Vector3.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Clipboard.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Context.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\ContextSettings.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Cursor.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Event.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Export.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\GlResource.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Joystick.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Keyboard.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Mouse.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Sensor.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Touch.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\VideoMode.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\Window.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\WindowHandle.hpp" />
+    <ClInclude Include="libraries\SFML-2.5\include\SFML\Window\WindowStyle.hpp" />
+    <ClInclude Include="src\Engine\Action.h" />
+    <ClInclude Include="src\GeometryWars\Components.h" />
+    <ClInclude Include="src\Engine\Entity.h" />
+    <ClInclude Include="src\Engine\EntityManager.h" />
+    <ClInclude Include="src\Engine\GameEngine.h" />
+    <ClInclude Include="src\Engine\MainMenu.h" />
+    <ClInclude Include="src\Engine\Scene.h" />
+    <ClInclude Include="src\Engine\Vec2.h" />
+    <ClInclude Include="src\GeometryWars\Scene_Play.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Action.cpp" />
-    <ClCompile Include="src\Entity.cpp" />
-    <ClCompile Include="src\EntityManager.cpp" />
-    <ClCompile Include="src\GameEngine.cpp" />
+    <ClCompile Include="libraries\ImGui\imgui-SFML.cpp" />
+    <ClCompile Include="libraries\ImGui\imgui.cpp" />
+    <ClCompile Include="libraries\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="libraries\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="libraries\ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="src\Engine\Action.cpp" />
+    <ClCompile Include="src\Engine\Entity.cpp" />
+    <ClCompile Include="src\Engine\EntityManager.cpp" />
+    <ClCompile Include="src\Engine\GameEngine.cpp" />
+    <ClCompile Include="src\Engine\MainMenu.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\Scene.cpp" />
-    <ClCompile Include="src\Scene_Menu.cpp" />
-    <ClCompile Include="src\Scene_Play.cpp" />
-    <ClCompile Include="src\Vec2.cpp" />
+    <ClCompile Include="src\Engine\Scene.cpp" />
+    <ClCompile Include="src\GeometryWars\Scene_Menu.cpp" />
+    <ClCompile Include="src\GeometryWars\Scene_Play.cpp" />
+    <ClCompile Include="src\Engine\Vec2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include="libraries\SFML-2.5\include\SFML\Audio\SoundFileFactory.inl" />
+    <None Include="libraries\SFML-2.5\include\SFML\Graphics\Glsl.inl" />
+    <None Include="libraries\SFML-2.5\include\SFML\Graphics\Rect.inl" />
+    <None Include="libraries\SFML-2.5\include\SFML\System\String.inl" />
+    <None Include="libraries\SFML-2.5\include\SFML\System\Thread.inl" />
+    <None Include="libraries\SFML-2.5\include\SFML\System\ThreadLocalPtr.inl" />
+    <None Include="libraries\SFML-2.5\include\SFML\System\Utf.inl" />
+    <None Include="libraries\SFML-2.5\include\SFML\System\Vector2.inl" />
+    <None Include="libraries\SFML-2.5\include\SFML\System\Vector3.inl" />
     <None Include="LICENSE" />
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="bin\Debug-x64\robotoblack.ttf" />
+    <Font Include="src\Engine\robotoblack.ttf" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -51,19 +171,6 @@
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
@@ -82,12 +189,6 @@
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -103,55 +204,19 @@
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Libraries\SFML-2.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp20</LanguageStandard>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)Libraries\SFML-2.5\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Libraries\SFML-2.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp20</LanguageStandard>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)Libraries\SFML-2.5\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Libraries\SFML-2.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Libraries\SFML-2.5\include;$(ProjectDir)Libraries\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)Libraries\SFML-2.5\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -172,7 +237,7 @@ xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-window-d-2.dll" "$(Output
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Libraries\SFML-2.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Libraries\SFML-2.5\include;$(ProjectDir)Libraries\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -180,7 +245,7 @@ xcopy /y /d "$(SolutionDir)libraries\SFML-2.5\bin\sfml-window-d-2.dll" "$(Output
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)Libraries\SFML-2.5\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
