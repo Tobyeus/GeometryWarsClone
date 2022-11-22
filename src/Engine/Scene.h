@@ -11,6 +11,7 @@ public:
 	std::map<int, std::string> m_actionMap;
 	bool m_pause = false;
 	bool m_hadEnded = false;
+	bool m_restart = false;
 	sf::RenderWindow* m_window;
 	bool hitboxActive = false;
 

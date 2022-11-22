@@ -85,7 +85,8 @@ public:
 class CRespawn {
 public:
 	int respawnFrame = -1;
-	int invincibleTime = 60;
+	bool justRespawned = false;
+	int invincibleTime = -1;
 };
 
 class CLives {

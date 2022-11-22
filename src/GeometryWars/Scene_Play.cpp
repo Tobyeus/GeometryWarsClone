@@ -17,6 +17,7 @@ void Scene_Play::init() {
 	registerAction(sf::Keyboard::D, "RIGHT");
 	registerAction(sf::Keyboard::P, "PAUSE");
 	registerAction(sf::Keyboard::Escape, "QUIT");
+	registerAction(sf::Keyboard::Enter, "RESTART");
 	// Set Font
 	if (!m_font.loadFromFile(".\\assets\\fonts\\arial.ttf")) {
 		std::cout << "Loading Font didnt work!" << std::endl;
@@ -46,13 +47,33 @@ void Scene_Play::update() {
 }
 
 void Scene_Play::sGameOver() {
+	sf::RectangleShape overlay;
+	overlay.setSize(sf::Vector2f(350,200));
+	overlay.setOrigin(175, 100);
+	overlay.setPosition(512, 300);
+	overlay.setFillColor(sf::Color(255, 255, 255, 200));
+	overlay.setOutlineColor(sf::Color::White);
+	overlay.setOutlineThickness(2);
+
 	sf::Text gameOver;
 	gameOver.setFont(m_font);
-	gameOver.setOrigin(60, 100);
+	gameOver.setOrigin(80, 100);
 	gameOver.setString("You died :(");
-	gameOver.setPosition(512, 384);
+	gameOver.setPosition(512, 344);
 	gameOver.setCharacterSize(30);
+	gameOver.setFillColor(sf::Color::Black);
+
+	sf::Text playAgain;
+	playAgain.setFont(m_font);
+	playAgain.setOrigin(160, 100);
+	playAgain.setString("Play Again? Press Enter");
+	playAgain.setPosition(512, 384);
+	playAgain.setCharacterSize(30);
+	playAgain.setFillColor(sf::Color::Black);
+
+	m_window->draw(overlay);
 	m_window->draw(gameOver);
+	m_window->draw(playAgain);
 }
 
 void Scene_Play::spawnPlayer() {
@@ -60,7 +81,7 @@ void Scene_Play::spawnPlayer() {
 	sf::Color playerColor(0, 0, 0);
 	sf::Color outlineColor(255, 255, 255);
 	Vec2 position(512.0f, 384.0f);
-	Vec2 speed(4.5f, 3.0f);
+	Vec2 speed(4.5f, 4.5f);
 	m_player->cShape = std::make_shared<CShape>(20, 10, playerColor, outlineColor, 5, position);
 	m_player->cTransform = std::make_shared<CTransform>(position, speed, 0.0f);
 	m_player->cInput = std::make_shared<CInput>();
@@ -81,6 +102,7 @@ void Scene_Play::sDoAction(Action& action) {
 
 		if (action.getName() == "PAUSE") { m_pause = !m_pause; }
 		if (action.getName() == "QUIT") { m_hadEnded = true; }
+		if (action.getName() == "RESTART" && m_hadEnded) { m_restart = true; }
 	}
 
 	if (action.getType() == "RELEASE") {
@@ -122,16 +144,29 @@ void Scene_Play::sRender() {
 		if (hitboxActive) {
 			m_window->draw(e->cCollision->hitbox);
 		}
+
+		if (m_player->cRespawn->justRespawned && e == m_player) {
+			int time = m_player->cRespawn->invincibleTime;
+			m_player->cRespawn->invincibleTime--;
+			if (time == - 10 ) { m_player->cRespawn->justRespawned = false; }
+			if (time > 0 && time <= 10) { continue; }
+			if (time > 20 && time <= 30) { continue; }
+			if (time > 40 && time <= 50) { continue; }
+			if (time > 60 && time <= 70) { continue; }
+			if (time > 80 && time <= 90) { continue; }
+			if (time > 100 && time <= 110) { continue; }
+		}
+
 		m_window->draw(e->cShape->shape);
 	}
 	m_scoreText.setString("Score " + std::to_string(m_player->cScore->score));
 	m_livesText.setString("Lives: " + std::to_string(m_player->cLives->lives));
 	m_window->draw(m_scoreText);
 	m_window->draw(m_livesText);
+	ImGui::SFML::Render(*m_window);
 	if (m_hadEnded) {
 		sGameOver();
 	}
-	ImGui::SFML::Render(*m_window);
 	m_window->display();
 }
 
@@ -177,6 +212,8 @@ void Scene_Play::sMovement() {
 		m_entities.addEntity(m_player);
 		m_player->setAlive();
 		m_player->cTransform->position = Vec2{ 512.0f, 384.0f };
+		m_player->cRespawn->justRespawned = true;
+		m_player->cRespawn->invincibleTime = 120;
 	}
 
 	m_player->cShape->shape.setPosition(m_player->cTransform->position.x, m_player->cTransform->position.y);
@@ -256,6 +293,11 @@ void Scene_Play::sCollision() {
 				}
 				// Player hits enemy
 				if (e1->getTag() == "Player" && e2->getTag() == "Enemy") {
+
+					if (m_player->cRespawn->justRespawned) {
+						e2->destroy();
+						continue;
+					}
 					e1->cLives->lives--;
 					if (e1->cLives->lives > 0) {
 						e1->cRespawn->respawnFrame = m_currentFrame + 120;

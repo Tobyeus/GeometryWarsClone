@@ -9,10 +9,12 @@ void GameEngine::init() {
 	m_window.display();
 	srand((unsigned int)time(NULL));
 	ImGui::SFML::Init(m_window);
+	m_running = true;
 }
 
 // Main Game loop
 void GameEngine::run() {
+gameStart:
 	// Initialization
 	init();
 
@@ -63,6 +65,9 @@ void GameEngine::run() {
 		if (getCurrentScene()->m_hadEnded) {
 			getCurrentScene()->sDebug();
 			getCurrentScene()->sRender();
+			if (getCurrentScene()->m_restart) {
+				m_running = false;
+			}
 			continue;
 		}
 
@@ -73,6 +78,9 @@ void GameEngine::run() {
 	std::cout << "Game Loop closing" << std::endl;
 	ImGui::SFML::Shutdown();
 	m_window.close();
+	if (getCurrentScene()->m_restart) {
+		goto gameStart;
+	}
 }
 
 void GameEngine::quit() {
