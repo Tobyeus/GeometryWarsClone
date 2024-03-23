@@ -12,7 +12,7 @@ The projects itself should not be centered around the game itself but rather foc
 
 ## Current status
 
-As of now you can find the v0.1 release. The build only supports winx64 at the moment. You can find the files in [v0.1]. Other platforms are not yet planned but might be added later.
+As of now you can find the v0.1 release. The build only supports winx64 at the moment. You can find the files in [v0.1](https://github.com/Tobyeus/GeometryWarsClone/releases/tag/alpha). Other platforms are not yet planned but might be added later.
 
 ## Dependencies
 
