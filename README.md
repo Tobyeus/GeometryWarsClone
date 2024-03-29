@@ -8,11 +8,11 @@ The projects consists of two main parts: the core engine code and game specific 
 
 ## Focus
 
-The projects itself should not be centered around the game itself but rather focus on engine development and its implementation into games. Another important point is learning C++. I am rather new to development in C++ therefore the implementations might not be most efficient and that is ok. Learning about C++ and engine development is the main focus here.
+The projects is not centered around the game itself but rather focus on engine development and its implementation into games. I am rather new to development in C++ therefore the implementations might not be most efficient and that is ok. Learning about C++ and engine development is the main focus here.
 
 ## Current status
 
-As of now you can find the v0.1 release. The build only supports winx64 at the moment. You can find the files in [v0.1](https://github.com/Tobyeus/GeometryWarsClone/releases/tag/alpha). Other platforms are not yet planned but might be added later.
+As of now there is the v0.1 release. The build only supports winx64 at the moment. You can find the files in [v0.1](https://github.com/Tobyeus/GeometryWarsClone/releases/tag/alpha). Other platforms are not yet planned but might be added later. The version covers a playable game with limited features.
 
 ## Dependencies
 
